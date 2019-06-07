@@ -71,8 +71,8 @@ I always try to find initial templates for the software I am building before mak
 
 Luckily, both Kubernetes and GCP's websites had some pretty fleshed out templates to start from:
 
-MySQL: https://kubernetes.io/docs/tasks/run-application/run-replicated-stateful-application/
-WordPress: https://cloud.google.com/kubernetes-engine/docs/tutorials/persistent-disk
+- MySQL: https://kubernetes.io/docs/tasks/run-application/run-replicated-stateful-application/
+- WordPress: https://cloud.google.com/kubernetes-engine/docs/tutorials/persistent-disk
 
 # Follow up
 
