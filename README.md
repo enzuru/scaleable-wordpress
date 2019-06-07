@@ -5,19 +5,20 @@
 Given that you are pointing to an appropriate *regional* cluster in GCP, installation should be straightforward:
 
 ### MySQL
-
+```bash
 kubectl apply -f mysql/mysql-configmap.yaml
 kubectl apply -f mysql/mysql-services.yaml
 kubectl apply -f mysql/mysql-statefulset.yaml
 mysql/setup
+```
 
 ### WordPress
-
+```bash
 kubectl apply -f wordpress/wordpress-volumeclaim.yaml
 kubectl apply -f wordpress/wordpress-deployment.yaml
 kubectl apply -f wordpress/wordpress-service.yaml
 wordpress/setup
-
+```
 ### Prometheus
 
 I setup Prometheus easily with this. If I had more time, I would have liked to have it in the same format as the above MySQL and WordPress resources:
