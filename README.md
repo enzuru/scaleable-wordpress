@@ -25,7 +25,7 @@ I setup Prometheus easily with this. If I had more time, I would have liked to h
 
 https://github.com/GoogleCloudPlatform/click-to-deploy/blob/master/k8s/prometheus/README.md
 
-## Initial thoughts
+## Approach
 
 I chose to do this with Kubernetes because of strong GCP support and how easy it makes infrastructure, scaling, self-healing, and monitoring. This lays the foundation for a "set it and forget it" model.
 
@@ -74,7 +74,7 @@ Luckily, both Kubernetes and GCP's websites had some pretty fleshed out template
 - MySQL: https://kubernetes.io/docs/tasks/run-application/run-replicated-stateful-application/
 - WordPress: https://cloud.google.com/kubernetes-engine/docs/tutorials/persistent-disk
 
-# Follow up
+## Follow up
 
 Steps I didn't have time for:
 
