@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      containers:
+        - image: bitnami/wordpress:latest
+          name: wordpress
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 30
+          env:
+          - name: MARIADB_HOST
+            value: mysql
+          - name: WORDPRESS_ROOT_USER
+            value: root
+          - name: WORDPRESS_DATABASE_USER
+            value: root
+          - name: WORDPRESS_DATABASE_NAME
+            value: wordpress
+          - name: REPLICA_DB_HOST
+            value: mysql-read
+          - name: REPLICA_DB_USER
+            value: root
+          - name: REPLICA_DB_NAME
+            value: wordpress
+          - name: ALLOW_EMPTY_PASSWORD
+            value: 'yes'
+          ports:
+            - containerPort: 80
+              name: wordpress
+          volumeMounts:
+            - name: wordpress-persistent-storage
+              mountPath: /var/www/html
+      volumes:
+        - name: wordpress-persistent-storage
+          persistentVolumeClaim:
+            claimName: wordpress-volumeclaim
