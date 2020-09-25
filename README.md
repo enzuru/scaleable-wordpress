@@ -84,4 +84,5 @@ Things to do:
 - Run Locust in a cluster to get a better sense for how autoscaling is working; is CPU-driven scaling really correct for LAMP? Perhaps queries-per-second would be better?
 - Review resource management, prioritization, and namespaces for pods
 - Create different environments for staging, production, etc with some smoke tests where we could automate updating WordPress and MySQL to the latest Docker images (this practice is big at Netflix!)
+- Move Prometheus setup code into repo -- right now we're using click-to-deploy and are manually adding datasources.
 - Verify if WordPress is being appropriate about MySQL's master/slave relationships
